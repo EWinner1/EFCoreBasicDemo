@@ -33,8 +33,10 @@ void ConfigureServices(IServiceCollection services)
 			.AllowAnyMethod()// 允许任何HTTP方法
 			.WithOrigins("http://localhost:4200"));  // 允许特定来源的跨域请求
 	});
+
 	services.AddScoped<StaffRepository>();
 	services.AddScoped<StaffService>();
+
 	services.AddControllers();
 	// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 	services.AddEndpointsApiExplorer();
