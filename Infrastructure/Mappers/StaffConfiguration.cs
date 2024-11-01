@@ -15,6 +15,8 @@ namespace EFCoreDemo1.Infrastructure.Mappers
 			builder.Property(user => user.Sex).HasColumnType("nvarchar").HasColumnName("Sex").HasMaxLength(10);
 			builder.Property(user => user.StaffLevel).HasColumnType("int").HasColumnName("StaffLevel");
 			builder.Property(user => user.Description).HasColumnType("nvarchar").HasColumnName("Description").HasMaxLength(50);
+			builder.Property(user => user.CompanyCode).HasColumnType("nvarchar").HasColumnName("CompanyCode").HasMaxLength(50);
+			builder.Property(user => user.CountryCode).HasColumnType("nvarchar").HasColumnName("Country_Code").HasMaxLength(5);
 		}
 	}
 }
