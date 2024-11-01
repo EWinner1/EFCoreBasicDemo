@@ -36,6 +36,8 @@ void ConfigureServices(IServiceCollection services)
 
 	services.AddScoped<StaffRepository>();
 	services.AddScoped<StaffService>();
+	services.AddScoped<StaffExpanedService>();
+	services.AddScoped<CompanyRepository>();
 
 	services.AddControllers();
 	// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

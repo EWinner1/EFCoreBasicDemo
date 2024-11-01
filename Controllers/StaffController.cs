@@ -9,10 +9,12 @@ namespace EFCoreDemo1.Controllers
 	public class StaffController : ControllerBase
 	{
 		private readonly StaffService staffService;
+		// private readonly StaffExpanedService staffExpanedService;
 
-		public StaffController(StaffService staffService)
+		public StaffController(StaffService staffService, StaffExpanedService staffExpanedService)
 		{
 			this.staffService = staffService;
+			// this.staffExpanedService = staffExpanedService;
 		}
 
 		[HttpPost]
@@ -50,5 +52,11 @@ namespace EFCoreDemo1.Controllers
 		{
 			return await staffService.GetAllStaffAsync();
 		}
+
+		//[HttpGet]
+		//public List<StaffExpaned> GetStaffDetailsByIdUseStoredProcedure()
+		//{
+		//	return staffExpanedService.GetStaffDetailById();
+		//}
 	}
 }

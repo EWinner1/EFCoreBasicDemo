@@ -8,6 +8,8 @@ namespace EFCoreDemo1.Infrastructure.Entities
 	{
 		private readonly IConfiguration configuration;
 		public virtual DbSet<Staff> StaffRepositories { get; set; }
+		// public virtual DbSet<Company> CompanyRepositories { get; set; }
+
 		public EFCoreDemoContext()
 		{
 		}
@@ -27,6 +29,8 @@ namespace EFCoreDemo1.Infrastructure.Entities
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.ApplyConfiguration(new StaffConfiguration());
+			// modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+
 			base.OnModelCreating(modelBuilder);
 		}
 	}
