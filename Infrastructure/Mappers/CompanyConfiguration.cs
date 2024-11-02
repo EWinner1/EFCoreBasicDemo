@@ -14,6 +14,7 @@ namespace EFCoreBasicDemo.Infrastructure.Mappers
 			builder.Property(c => c.CompanyName).HasColumnType("nvarchar").HasColumnName("CompanyName").HasMaxLength(50);
 			builder.Property(c => c.CompanyTelephone).HasColumnType("nvarchar").HasColumnName("CompanyTelephone").HasMaxLength(50);
 			builder.Property(c => c.CompanyCountry).HasColumnType("nvarchar").HasColumnName("CompanyCountry").HasMaxLength(5);
+			builder.HasMany(c => c.Staffs).WithOne(s => s.Company).HasForeignKey(c => c.CompanyCode);
 		}
 	}
 }

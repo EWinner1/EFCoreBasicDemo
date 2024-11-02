@@ -3,6 +3,7 @@ using EFCoreBasicDemo.Infrastructure.MyEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCoreBasicDemo.Migrations
 {
     [DbContext(typeof(EFCoreDemoContext))]
-    partial class EFCoreDemoContextModelSnapshot : ModelSnapshot
+    [Migration("20241102112012_updateConstraint")]
+    partial class updateConstraint
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
