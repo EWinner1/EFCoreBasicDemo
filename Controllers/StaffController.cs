@@ -1,8 +1,8 @@
-﻿using EFCoreDemo1.Infrastructure.Models;
-using EFCoreDemo1.Infrastructure.Services;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
+using EFCoreBasicDemo.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EFCoreDemo1.Controllers
+namespace EFCoreBasicDemo.Controllers
 {
 	[Route("api/[controller]/[action]")]
 	[ApiController]

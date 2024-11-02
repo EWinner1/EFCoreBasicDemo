@@ -1,6 +1,6 @@
-﻿using EFCoreDemo1.Infrastructure.Models;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
 
-namespace EFCoreDemo1.Infrastructure.Repositories.Interfaces
+namespace EFCoreBasicDemo.Infrastructure.Repositories.Interfaces
 {
 	public interface IStaffRepository
 	{

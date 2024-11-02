@@ -1,10 +1,9 @@
-﻿using EFCoreDemo1.Infrastructure.Entities;
-using EFCoreDemo1.Infrastructure.Models;
-using EFCoreDemo1.Infrastructure.MyEntities;
-using EFCoreDemo1.Infrastructure.Repositories.Interfaces;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
+using EFCoreBasicDemo.Infrastructure.MyEntities;
+using EFCoreBasicDemo.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCoreDemo1.Infrastructure.Repositories
+namespace EFCoreBasicDemo.Infrastructure.Repositories
 {
 	public class StaffRepository : MyRepository<Staff, EFCoreDemoContext>, IStaffRepository
 	{
@@ -36,7 +35,7 @@ namespace EFCoreDemo1.Infrastructure.Repositories
 
 		public Task<List<Staff>> GetAllStaffAsync()
 		{
-			return Context.StaffRepositories.ToListAsync();
+			return Context.StaffRepositories.Include("Company").ToListAsync();
 		}
 
 		public Staff? GetStaffById(int id)

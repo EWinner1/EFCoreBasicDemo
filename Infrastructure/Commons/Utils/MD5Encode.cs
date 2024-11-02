@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace EFCoreDemo1.Infrastructure.Commons.Utils
+namespace EFCoreBasicDemo.Infrastructure.Commons.Utils
 {
 	public static class MD5Encode
 	{

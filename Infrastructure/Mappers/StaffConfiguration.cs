@@ -1,8 +1,9 @@
-﻿using EFCoreDemo1.Infrastructure.Models;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Reflection.Emit;
 
-namespace EFCoreDemo1.Infrastructure.Mappers
+namespace EFCoreBasicDemo.Infrastructure.Mappers
 {
 	public class StaffConfiguration : IEntityTypeConfiguration<Staff>
 	{
@@ -17,6 +18,7 @@ namespace EFCoreDemo1.Infrastructure.Mappers
 			builder.Property(user => user.Description).HasColumnType("nvarchar").HasColumnName("Description").HasMaxLength(50);
 			builder.Property(user => user.CompanyCode).HasColumnType("nvarchar").HasColumnName("CompanyCode").HasMaxLength(50);
 			builder.Property(user => user.CountryCode).HasColumnType("nvarchar").HasColumnName("Country_Code").HasMaxLength(5);
+			builder.HasOne(user => user.Company).WithMany(c => c.Staffs).HasForeignKey(u => u.CompanyCode).IsRequired();
 		}
 	}
 }

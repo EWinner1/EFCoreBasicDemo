@@ -1,4 +1,4 @@
-﻿namespace EFCoreDemo1.Infrastructure.Services.Interfaces
+﻿namespace EFCoreBasicDemo.Infrastructure.Services.Interfaces
 {
 	public interface IStaffExpanedService
 	{

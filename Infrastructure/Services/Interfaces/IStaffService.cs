@@ -1,6 +1,6 @@
-﻿using EFCoreDemo1.Infrastructure.Models;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
 
-namespace EFCoreDemo1.Infrastructure.Services.Interfaces
+namespace EFCoreBasicDemo.Infrastructure.Services.Interfaces
 {
 	public interface IStaffService
 	{

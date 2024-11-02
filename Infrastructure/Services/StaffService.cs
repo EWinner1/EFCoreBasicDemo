@@ -1,8 +1,8 @@
-﻿using EFCoreDemo1.Infrastructure.Models;
-using EFCoreDemo1.Infrastructure.Repositories;
-using EFCoreDemo1.Infrastructure.Services.Interfaces;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
+using EFCoreBasicDemo.Infrastructure.Repositories;
+using EFCoreBasicDemo.Infrastructure.Services.Interfaces;
 
-namespace EFCoreDemo1.Infrastructure.Services
+namespace EFCoreBasicDemo.Infrastructure.Services
 {
 	public class StaffService : IStaffService
 	{

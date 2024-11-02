@@ -1,7 +1,8 @@
-using EFCoreDemo1.Infrastructure.Entities;
-using EFCoreDemo1.Infrastructure.Repositories;
-using EFCoreDemo1.Infrastructure.Services;
+using EFCoreBasicDemo.Infrastructure.MyEntities;
+using EFCoreBasicDemo.Infrastructure.Repositories;
+using EFCoreBasicDemo.Infrastructure.Services;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -47,5 +48,8 @@ void ConfigureServices(IServiceCollection services)
 		c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyEFCoreDemo1", Version = "v1.1" });
 	});
 	services.AddDbContext<EFCoreDemoContext>();
-	services.AddMvc();
+	services.AddMvc().AddJsonOptions(options =>
+	{
+		options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+	});
 }

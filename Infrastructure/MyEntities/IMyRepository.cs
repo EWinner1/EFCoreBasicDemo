@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace EFCoreDemo1.Infrastructure.MyEntities
+namespace EFCoreBasicDemo.Infrastructure.MyEntities
 {
 	public interface IMyRepository<T> where T : class
 	{

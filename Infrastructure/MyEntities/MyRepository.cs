@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace EFCoreDemo1.Infrastructure.MyEntities
+namespace EFCoreBasicDemo.Infrastructure.MyEntities
 {
 	public abstract class MyRepository<TEntry, TDBContext> : IMyRepository<TEntry> where TEntry : class where TDBContext : DbContext
 	{

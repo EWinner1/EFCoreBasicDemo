@@ -1,16 +1,13 @@
-﻿using EFCoreDemo1.Infrastructure.Entities;
-using EFCoreDemo1.Infrastructure.Models;
-using EFCoreDemo1.Infrastructure.MyEntities;
-using Microsoft.Data.SqlClient;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+﻿using EFCoreBasicDemo.Infrastructure.Models;
+using EFCoreBasicDemo.Infrastructure.MyEntities;
 
-namespace EFCoreDemo1.Infrastructure.Repositories
+namespace EFCoreBasicDemo.Infrastructure.Repositories
 {
 	public class CompanyRepository : MyRepository<Company, EFCoreDemoContext>
 	{
 		public CompanyRepository(EFCoreDemoContext context) : base(context)
 		{
-			
+
 		}
 
 		//public List<StaffExpaned> GetStaffDetailsById()

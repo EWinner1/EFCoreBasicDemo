@@ -1,8 +1,9 @@
-﻿using EFCoreDemo1.Infrastructure.Mappers;
-using EFCoreDemo1.Infrastructure.Models;
+﻿using EFCoreBasicDemo.Infrastructure.Mappers;
+using EFCoreBasicDemo.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
-namespace EFCoreDemo1.Infrastructure.Entities
+namespace EFCoreBasicDemo.Infrastructure.MyEntities
 {
 	public class EFCoreDemoContext : DbContext
 	{
@@ -22,16 +23,37 @@ namespace EFCoreDemo1.Infrastructure.Entities
 		{
 			var connStr = configuration.GetConnectionString("ConnectionString");
 			optionsBuilder.UseSqlServer(connStr);
-			//@"server=TIANHE4\MYTESTDATABASE;database=MyDatabase;uid=ewinner;pwd=QAQ123456789;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;")
-			//@"server=127.0.0.1;database=MYDATABASE\MyTestData;uid=ewinner;pwd=QAQ123456789")
+			optionsBuilder.EnableSensitiveDataLogging(true);
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.ApplyConfiguration(new StaffConfiguration());
-			// modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+			modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+			modelBuilder.Entity<StaffExpaned>().ToTable("StaffExpaned", se => se.ExcludeFromMigrations());
+
+			modelBuilder.InsertData();
 
 			base.OnModelCreating(modelBuilder);
 		}
 	}
+
+
+	public static class ModelBuilderExtensions
+	{
+		public static void InsertData(this ModelBuilder modelBuilder)
+		{
+			Company accenture = new("AC001", "Accenture", "01064858999", "EN");
+			Company redMaple = new("RMT", "Red Maple", "86866668888", "CN");
+
+			Staff hengli = new(1, "Xiaoyu", "female", 12, "White Moon Light", "AC001", "CN");
+			Staff xiaoyu = new(2, "Henry", "male", 10, "Software Engineer", "AC001", "CN");
+			Staff tony = new(3, "tony", "male", 10, "180+++++", "RMT", "CN");
+			Staff coco = new(4, "Henry", "female", 11, "Cute girl", "RMT", "CN");
+
+			modelBuilder.Entity<Company>().HasData(accenture, redMaple);
+			modelBuilder.Entity<Staff>().HasData(hengli, xiaoyu, tony, coco);
+		}
+	}
+	
 }
