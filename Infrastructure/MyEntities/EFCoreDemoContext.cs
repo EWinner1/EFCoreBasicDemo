@@ -23,7 +23,7 @@ namespace EFCoreBasicDemo.Infrastructure.MyEntities
 		{
 			var connStr = configuration.GetConnectionString("ConnectionString");
 			optionsBuilder.UseSqlServer(connStr);
-			optionsBuilder.EnableSensitiveDataLogging(true);
+			// optionsBuilder.EnableSensitiveDataLogging(true);
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
