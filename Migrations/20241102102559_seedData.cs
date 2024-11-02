@@ -14,7 +14,7 @@ namespace EFCoreBasicDemo.Migrations
         {
             migrationBuilder.InsertData(
                 table: "Company",
-                columns: new[] { "CompanyCode", "CompanyCountry", "CompanyName", "CompanyTelephone" },
+				columns: ["CompanyCode", "CompanyCountry", "CompanyName", "CompanyTelephone"],
                 values: new object[,]
                 {
                     { "AC001", "EN", "Accenture", "01064858999" },
@@ -23,7 +23,7 @@ namespace EFCoreBasicDemo.Migrations
 
             migrationBuilder.InsertData(
                 table: "Staff",
-                columns: new[] { "Id", "CompanyCode", "Country_Code", "Description", "Name", "Sex", "StaffLevel" },
+                columns: ["Id", "CompanyCode", "Country_Code", "Description", "Name", "Sex", "StaffLevel"],
                 values: new object[,]
                 {
                     { 1, "AC001", "CN", "White Moon Light", "Xiaoyu", "female", 12 },
