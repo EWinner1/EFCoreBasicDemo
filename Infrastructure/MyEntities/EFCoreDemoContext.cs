@@ -48,8 +48,8 @@ namespace EFCoreBasicDemo.Infrastructure.MyEntities
 
 			Staff hengli = new(1, "Xiaoyu", "female", 12, "White Moon Light", "AC001", "CN");
 			Staff xiaoyu = new(2, "Henry", "male", 10, "Software Engineer", "AC001", "CN");
-			Staff tony = new(3, "tony", "male", 10, "180+++++", "RMT", "CN");
-			Staff coco = new(4, "Henry", "female", 11, "Cute girl", "RMT", "CN");
+			Staff tony = new(3, "Tony", "male", 10, "180+++++", "RMT", "CN");
+			Staff coco = new(4, "Coco", "female", 11, "Cute girl", "RMT", "CN");
 
 			modelBuilder.Entity<Company>().HasData(accenture, redMaple);
 			modelBuilder.Entity<Staff>().HasData(hengli, xiaoyu, tony, coco);
